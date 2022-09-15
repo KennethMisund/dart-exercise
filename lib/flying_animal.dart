@@ -6,7 +6,7 @@ class FlyingAnimal extends Animal{
   FlyingAnimal(String name, [this.flyingSpeed = 3.14]) : super(name: name, legCount: 2, hasWings: true);
 
   fly() {
-    print("$name is flying at $flyingSpeed");
+    print("${super.name} is flying at ${flyingSpeed}m/s");
   }
 }
 
