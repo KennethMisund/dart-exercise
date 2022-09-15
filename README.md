@@ -91,31 +91,41 @@ The last step is to implement function `formatTime(Datetime timestamp)`, inside 
 must format the given `timestamp` according to the following specification:
 
 1. You need to find out the current time first. The formatting will be based on the `timestamp` value relative to
-   current time.
+   current time. X
+
 2. If the given `timestamp` is less than one second away from the current timestamp, then the function must
-   return `"now"`.
+   return `"now"`. X
+
 3. If the timestamp is one second or more in the future, return it formatted as a date and time in the following
    format: `"YYYY-MM-DD hh:mm:ss"`, where `YYYY` is a four-digit year, `MM` is a two-digit month starting at 01 (01, 02,
    …,
    12), `DD` is two-digit day (01, 02, …, 31), `hh` is two-digit hours (00 to 23), `mm` is two-digit minutes (00 to 59)
    and `ss`
-   is two-digit seconds (00 to 59). For example, the deadline of this exercise is: `"2022-09-16 18:00:00"`.
-4. If the `timestamp` is 1 second in the past, return `"1 second ago"`.
+   is two-digit seconds (00 to 59). For example, the deadline of this exercise is: `"2022-09-16 18:00:00"`. X
+
+4. If the `timestamp` is 1 second in the past, return `"1 second ago"`. X
+
 5. If the `timestamp` is 2 to 59 seconds in the past, return `"x seconds ago"`, where x is the difference between
    current timestamp and the given `timestamp`. For example: if the current time is `2022-08-38 18:25:40` and the
-   given `timestamp` is `22-08-30 18:25:15`, then the function must return `"25 seconds ago"`.
+   given `timestamp` is `22-08-30 18:25:15`, then the function must return `"25 seconds ago"`. X
+
 6. If the `timestamp` is 1 to 59 minutes ago, then the function returns `"x minute(s) ago"`, where x is the difference
    in minutes, rounded. For example, if the timestamp is 2 minutes and 25 seconds ago, the function
    returns `"2 minute(s) ago"`. If the timestamp is 2 minutes and 30 seconds ago, the function
-   returns `"3 minute(s) ago"`, which is 2.5 minutes rounded up. Etc. up to a difference of 60 minutes and 29 seconds.
-7. If the difference is less than 24.0 hours, the function returns `"x hour(s) ago"`, where x is rounded, as always
-   (3.49 hours is rounded to 3 hours, while 3.5 hours is rounded to 4 hours).
-9. If the difference is from 24.0 hours but less than 36 hours, the function must return `"one day ago"`.
+   returns `"3 minute(s) ago"`, which is 2.5 minutes rounded up. Etc. up to a difference of 60 minutes and 29 seconds. X
+
+8. If the difference is less than 24.0 hours, the function returns `"x hour(s) ago"`, where x is rounded, as always
+   (3.49 hours is rounded to 3 hours, while 3.5 hours is rounded to 4 hours). X
+
+9. If the difference is from 24.0 hours but less than 36 hours, the function must return `"one day ago"`. X
+
 10. If the difference is more or equal to 36 hours but less than 7 days, the function must return `"x days ago"`, where
     the same rounding rules apply (1.1 days up to 1.4999 days are rounded to 1 days, while 4.5 days up to 5.4999 days
-    are rounded to 5 days).
+    are rounded to 5 days). X
+
 11. If the `timestamp` is 7 days or more in the past, return the full timestamp, the same format as for timestamps in
     the future: `YYYY-MM-DD hh:mm:ss`.
+
 12. If the given `timestamp` is `null`, return `null`.
 
 To check whether your code is correct, run `dart test test/step_3.dart`

@@ -1,5 +1,5 @@
-import 'package:exercise_e2/flying_animal.dart';
 import 'package:test/test.dart';
+import 'package:exercise_e2/flying_animal.dart';
 
 void main() {
   test('Step 2 - FlyingAnimal class', () {
